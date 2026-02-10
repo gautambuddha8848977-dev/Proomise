@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Promise Day 🤍</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  background: linear-gradient(135deg,#f8f9fb,#e9ecf1);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+
+.book{
+  width:340px;
+  height:480px;
+  perspective:1400px;
+  position:relative;
+}
+
+.page{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:#ffffff;
+  border-radius:18px;
+  box-shadow:0 25px 50px rgba(0,0,0,0.15);
+  padding:32px 26px;
+  box-sizing:border-box;
+  transform-origin:left;
+  transition:transform 1.3s ease;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  backface-visibility:hidden;
+}
+
+.page h1{
+  font-family:'Playfair Display',serif;
+  font-size:26px;
+  text-align:center;
+  color:#222;
+  margin-bottom:20px;
+}
+
+.page p{
+  font-family:'Inter',sans-serif;
+  font-size:16px;
+  line-height:1.8;
+  color:#444;
+  text-align:center;
+}
+
+.page span{
+  display:block;
+  margin-top:20px;
+  font-family:'Playfair Display',serif;
+  font-size:14px;
+  color:#777;
+}
+
+.page.flipped{
+  transform:rotateY(-160deg);
+}
+
+.heart{
+  position:absolute;
+  font-size:22px;
+  opacity:0.5;
+  animation:float 6s infinite ease-in-out;
+}
+
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-40px);}
+  100%{transform:translateY(0);}
+}
+
+.tap{
+  position:absolute;
+  bottom:14px;
+  width:100%;
+  text-align:center;
+  font-size:13px;
+  font-family:'Inter',sans-serif;
+  color:#999;
+}
+</style>
+</head>
+
+<body>
+
+<div class="book" onclick="nextPage()">
+
+  <!-- Page 1 -->
+  <div class="page" id="p1">
+    <h1>Happy Promise Day 🤍</h1>
+    <p>
+      Today isn’t about grand gestures or loud declarations.  
+      It’s about choosing one heart, again and again,  
+      even when no one is watching.
+    </p>
+    <span>— tap to turn</span>
+  </div>
+
+  <!-- Page 2 -->
+  <div class="page" id="p2">
+    <p>
+      I promise to stay —  
+      not just when life feels gentle,  
+      but when days are heavy  
+      and love asks for patience instead of passion.
+    </p>
+    <span>— always choosing you</span>
+  </div>
+
+  <!-- Page 3 -->
+  <div class="page" id="p3">
+    <p>
+      I promise to listen beyond words,  
+      to understand your silence,  
+      and to be a place where your heart  
+      never feels alone or misunderstood.
+    </p>
+    <span>— even in quiet moments</span>
+  </div>
+
+  <!-- Page 4 -->
+  <div class="page" id="p4">
+    <p>
+      I promise honesty when it’s hard,  
+      loyalty when it’s tested,  
+      and a love that grows deeper  
+      instead of fading with time.
+    </p>
+    <span>— growing, not perfect</span>
+  </div>
+
+  <!-- Page 5 -->
+  <div class="page" id="p5">
+    <p>
+      And above everything else,  
+      I promise that no matter where life takes us,  
+      my heart will always find its way back to you.
+    </p>
+    <h1 style="margin-top:25px;">🤍</h1>
+    <span>Forever.</span>
+  </div>
+
+  <div class="tap">Tap anywhere to flip</div>
+</div>
+
+<!-- Floating hearts -->
+<div class="heart" style="left:20%; top:30%;">🤍</div>
+<div class="heart" style="left:70%; top:60%;">🤍</div>
+<div class="heart" style="left:45%; top:15%;">🤍</div>
+
+<script>
+let current = 1;
+function nextPage(){
+  if(current <= 5){
+    document.getElementById('p'+current).classList.add('flipped');
+    current++;
+  }
+}
+</script>
+
+</body>
+</html>
